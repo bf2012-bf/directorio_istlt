@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'docente.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  MainApp({super.key});
+
+  Docente docente1 = Docente(
+    nombres: "Israel",
+    apellidos: "Zurita",
+    carrera: "DAW",
+    nivelEstudio: "Ing.",
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +31,8 @@ class MainApp extends StatelessWidget {
             ListTile(
               trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
               leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("Ing. Israel Zurita"),
-              subtitle: Text("Desarrollo de Aplicaciones Web"),
+              title: Text("${docente1.nivelEstudio} ${docente1.nombres} ${docente1.apellidos}"),
+              subtitle: Text("${docente1.carrera} "),
             ),
             Divider(),
             ListTile(
