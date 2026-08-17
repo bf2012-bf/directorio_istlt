@@ -15,6 +15,29 @@ class MainApp extends StatelessWidget {
     nivelEstudio: "Ing.",
   );
 
+  List<Docente> listaDocentes = [
+    Docente(
+    nombres: "Israel",
+    apellidos: "Zurita",
+    carrera: "DAW",
+    nivelEstudio: "Ing.",
+  ),
+  Docente(
+    nombres: "Angel",
+    apellidos: "Novillo",
+    carrera: "DAW",
+    nivelEstudio: "Msg.",
+  ),
+  Docente(
+    nombres: "Cecilia",
+    apellidos: "Naula",
+    carrera: "DAW",
+    nivelEstudio: "Mtr.",
+  )
+  ];
+
+  int indiciDocentes = 1;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,14 +61,18 @@ class MainApp extends StatelessWidget {
             ListTile(
               trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
               leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("Ing. Angel Novillo"),
+              title: Text(
+                "${listaDocentes[indiciDocentes].nivelEstudio} ${listaDocentes[indiciDocentes].nombres} ${listaDocentes[indiciDocentes].apellidos}"
+              ),
               subtitle: Text("Desarrollo de Aplicaciones Web"),
             ),
             Divider(),
             ListTile(
               trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
               leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("Ing. Cecilia Naula"),
+              title: Text(
+                "${listaDocentes[indiciDocentes].nivelEstudio} ${listaDocentes[indiciDocentes].nombres} ${listaDocentes[indiciDocentes].apellidos}"
+              ),
               subtitle: Text("Desarrollo de Aplicaciones Web"),
             ),
             Divider(),
