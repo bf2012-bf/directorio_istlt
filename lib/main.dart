@@ -16,8 +16,7 @@ class MainApp extends StatelessWidget {
     Docente(nombres: "María", apellidos: "Delgado", carrera: "DAW", nivelEstudio: "Ing.",),
     Docente(nombres: "Pablo", apellidos: "Reyes", carrera: "DAW", nivelEstudio: "Ing.",),
     Docente(nombres: "Jonh", apellidos: "Melendez", carrera: "DAW", nivelEstudio: "Ing.",),
-    Docente(nombres: "Cecilia", apellidos: "Naula", carrera: "DAW", nivelEstudio: "Mtr.",),
-    Docente(nombres: "Cecilia", apellidos: "Naula", carrera: "DAW", nivelEstudio: "Mtr.",),
+    Docente(nombres: "Arturo", apellidos: "Palacios", carrera: "Producción Agrícola", nivelEstudio: "Ing.",),
   ];
 
   @override
