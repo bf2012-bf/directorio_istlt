@@ -8,35 +8,17 @@ void main() {
 class MainApp extends StatelessWidget {
   MainApp({super.key});
 
-  Docente docente1 = Docente(
-    nombres: "Israel",
-    apellidos: "Zurita",
-    carrera: "DAW",
-    nivelEstudio: "Ing.",
-  );
-
-  List<Docente> listaDocentes = [
-    Docente(
-    nombres: "Israel",
-    apellidos: "Zurita",
-    carrera: "DAW",
-    nivelEstudio: "Ing.",
-  ),
-  Docente(
-    nombres: "Angel",
-    apellidos: "Novillo",
-    carrera: "DAW",
-    nivelEstudio: "Msg.",
-  ),
-  Docente(
-    nombres: "Cecilia",
-    apellidos: "Naula",
-    carrera: "DAW",
-    nivelEstudio: "Mtr.",
-  )
+  final List<Docente> listaDocentes = [
+    Docente(nombres: "Israel", apellidos: "Zurita", carrera: "DAW", nivelEstudio: "Ing.",),
+    Docente(nombres: "Angel", apellidos: "Novillo", carrera: "DAW", nivelEstudio: "Msg.",),
+    Docente(nombres: "Cecilia", apellidos: "Naula", carrera: "DAW", nivelEstudio: "Mtr.",),
+    Docente(nombres: "Cristian", apellidos: "Durán", carrera: "DAW", nivelEstudio: "Ing.",),
+    Docente(nombres: "María", apellidos: "Delgado", carrera: "DAW", nivelEstudio: "Ing.",),
+    Docente(nombres: "Pablo", apellidos: "Reyes", carrera: "DAW", nivelEstudio: "Ing.",),
+    Docente(nombres: "Jonh", apellidos: "Melendez", carrera: "DAW", nivelEstudio: "Ing.",),
+    Docente(nombres: "Cecilia", apellidos: "Naula", carrera: "DAW", nivelEstudio: "Mtr.",),
+    Docente(nombres: "Cecilia", apellidos: "Naula", carrera: "DAW", nivelEstudio: "Mtr.",),
   ];
-
-  int indiciDocentes = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -48,121 +30,27 @@ class MainApp extends StatelessWidget {
           backgroundColor: Colors.blue,
           foregroundColor: Colors.amber,
         ),
-        body: ListView(
-        padding: EdgeInsets.all(10),
-          children: [
-            ListTile(
-              trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("${docente1.nivelEstudio} ${docente1.nombres} ${docente1.apellidos}"),
-              subtitle: Text("${docente1.carrera} "),
-            ),
-            Divider(),
-            ListTile(
-              trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text(
-                "${listaDocentes[indiciDocentes].nivelEstudio} ${listaDocentes[indiciDocentes].nombres} ${listaDocentes[indiciDocentes].apellidos}"
-              ),
-              subtitle: Text("Desarrollo de Aplicaciones Web"),
-            ),
-            Divider(),
-            ListTile(
-              trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text(
-                "${listaDocentes[indiciDocentes].nivelEstudio} ${listaDocentes[indiciDocentes].nombres} ${listaDocentes[indiciDocentes].apellidos}"
-              ),
-              subtitle: Text("Desarrollo de Aplicaciones Web"),
-            ),
-            Divider(),
-            ListTile(
-              trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("Ing. Cecilia Naula"),
-              subtitle: Text("Desarrollo de Aplicaciones Web"),
-            ),
-            Divider(),
-            ListTile(
-              trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("Ing. Cecilia Naula"),
-              subtitle: Text("Desarrollo de Aplicaciones Web"),
-            ),
-            Divider(),
-            ListTile(
-              trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("Ing. Cecilia Naula"),
-              subtitle: Text("Desarrollo de Aplicaciones Web"),
-            ),
-            Divider(),
-            ListTile(
-              trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("Ing. Cecilia Naula"),
-              subtitle: Text("Desarrollo de Aplicaciones Web"),
-            ),
-            Divider(),
-            ListTile(
-              trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("Ing. Cecilia Naula"),
-              subtitle: Text("Desarrollo de Aplicaciones Web"),
-            ),
-            Divider(),
-            ListTile(
-              trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("Ing. Cecilia Naula"),
-              subtitle: Text("Desarrollo de Aplicaciones Web"),
-            ),
-            Divider(),
-            ListTile(
-              trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("Ing. Cecilia Naula"),
-              subtitle: Text("Desarrollo de Aplicaciones Web"),
-            ),
-            Divider(),
-            ListTile(
-              trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("Ing. Cecilia Naula"),
-              subtitle: Text("Desarrollo de Aplicaciones Web"),
-            ),
-            Divider(),
-            ListTile(
-              trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("Ing. Cecilia Naula"),
-              subtitle: Text("Desarrollo de Aplicaciones Web"),
-            ),
-            Divider(),
-            ListTile(
-              trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("Ing. Cecilia Naula"),
-              subtitle: Text("Desarrollo de Aplicaciones Web"),
-            ),
-            Divider(),
-            ListTile(
-              trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("Ing. Cecilia Naula"),
-              subtitle: Text("Desarrollo de Aplicaciones Web"),
-            ),
-            Divider(),
-            ListTile(
-              trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text("Ing. Cecilia Naula"),
-              subtitle: Text("Desarrollo de Aplicaciones Web"),
-            ),
-            Divider(),
-          ],
+        body: ListView.separated(
+          padding: EdgeInsets.all(16),
+          itemCount: listaDocentes.length,
+          separatorBuilder: (context, index) => Divider(
+            height: 20.0,
+            color: Colors.amber,
+          ),
+          itemBuilder: (context, index) {
+            return _docentetile(listaDocentes[index]);
+          },
         ),
       ),
+    );
+  }
+
+  Widget _docentetile(Docente d) {
+    return ListTile(
+      trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
+      leading: Icon(Icons.person, color: Colors.blue),
+      title: Text("${d.nivelEstudio} ${d.nombres} ${d.apellidos}"),
+      subtitle: Text(d.carrera),
     );
   }
 }
