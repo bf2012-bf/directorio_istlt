@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'docente.dart';
-import 'docenteTile.dart';
+import 'docentetile.dart';
 
 void main() {
   runApp(MainApp());
