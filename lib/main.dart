@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'docente.dart';
+import 'docenteTile.dart';
 
 void main() {
   runApp(MainApp());
@@ -37,19 +38,10 @@ class MainApp extends StatelessWidget {
             color: Colors.amber,
           ),
           itemBuilder: (context, index) {
-            return _docentetile(listaDocentes[index]);
+            return DocenteTile(docente: listaDocentes[index]);
           },
         ),
       ),
-    );
-  }
-
-  Widget _docentetile(Docente d) {
-    return ListTile(
-      trailing: Icon(Icons.star, color:  Color.fromARGB(255, 185, 194, 211)),
-      leading: Icon(Icons.person, color: Colors.blue),
-      title: Text("${d.nivelEstudio} ${d.nombres} ${d.apellidos}"),
-      subtitle: Text(d.carrera),
     );
   }
 }
