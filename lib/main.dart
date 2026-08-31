@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'docente.dart';
-import 'directorioscreen.dart';
- 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Hive.initFlutter();
-  Hive.registerAdapter(DocenteAdapter());
-  await Hive.openBox<Docente>('docentes');
-  runApp(const MainApp());
+import 'docentetile.dart';
+
+void main() {
+  runApp(MainApp());
 }
- 
+
 class MainApp extends StatelessWidget {
   MainApp({super.key});
 
@@ -22,14 +17,36 @@ class MainApp extends StatelessWidget {
     Docente(nombres: "María", apellidos: "Delgado", carrera: "DAW", nivelEstudio: "Ing.",),
     Docente(nombres: "Pablo", apellidos: "Reyes", carrera: "DAW", nivelEstudio: "Ing.",),
     Docente(nombres: "Jonh", apellidos: "Melendez", carrera: "DAW", nivelEstudio: "Ing.",),
+<<<<<<< HEAD
     Docente(nombres: "Cecilia", apellidos: "Naula", carrera: "DAW", nivelEstudio: "Mtr.",),
     Docente(nombres: "Cecilia", apellidos: "Naula", carrera: "DAW", nivelEstudio: "Mtr.",),
+=======
+    Docente(nombres: "Arturo", apellidos: "Palacios", carrera: "Producción Agrícola", nivelEstudio: "Ing.",),
+>>>>>>> parent of a9360e8 (uso base de datos NoSQL)
   ];
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DirectorioScreen());
+      home: Scaffold(
+        appBar: AppBar(
+          title: Center(child: Text("Directorio IST La Troncal")),
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.amber,
+        ),
+        body: ListView.separated(
+          padding: EdgeInsets.all(16),
+          itemCount: listaDocentes.length,
+          separatorBuilder: (context, index) => Divider(
+            height: 20.0,
+            color: Colors.amber,
+          ),
+          itemBuilder: (context, index) {
+            return DocenteTile(docente: listaDocentes[index]);
+          },
+        ),
+      ),
+    );
   }
 }
