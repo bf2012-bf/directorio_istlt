@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hive_ce_flutter/hive_flutter.dart';
 import 'docente.dart';
 
-late Box<Docente> _caja;
-
 class DirectorioScreen extends StatefulWidget {
   const DirectorioScreen({super.key});
   @override
@@ -11,7 +9,7 @@ class DirectorioScreen extends StatefulWidget {
 }
  
 class _DirectorioScreenState extends State<DirectorioScreen> {
-  // late Box<Docente> _caja;
+  late Box<Docente> _caja;
  
   @override
   void initState() {
@@ -35,32 +33,21 @@ class _DirectorioScreenState extends State<DirectorioScreen> {
     }
   }
  
-  // void _agregarDocente() { // CREATE
-  //   _caja.add(Docente(nombres: 'Nuevo', apellidos: 'Docente',
-  //       nivelEstudio: 'Ing.', carrera: 'DAW'));
-  // }
+  void _agregarDocente() { // CREATE
+    _caja.add(Docente(nombres: 'Nuevo', apellidos: 'Docente',
+        nivelEstudio: 'Ing.', carrera: 'DAW'));
+  }
  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 214, 214, 240),
       appBar: AppBar(
         title: const Text('Directorio IST La Troncal'),
         backgroundColor: const Color.fromARGB(255, 22, 90, 227),
         foregroundColor: const Color.fromARGB(255, 236, 198, 46),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed:() async {
-          final Docente? docente = await Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => AgregarDocente(),),
-          );
-          if (docente != null) {
-            setState(() {
-              _caja.add(docente);
-            });
-          }
-        },//_agregarDocente,
+        onPressed: _agregarDocente,
         backgroundColor: const Color.fromARGB(255, 22, 90, 227),
         child: Icon(
           Icons.add,
@@ -76,13 +63,10 @@ class _DirectorioScreenState extends State<DirectorioScreen> {
           return ListView.separated(
             padding: const EdgeInsets.all(18),
             itemCount: caja.length,
-            separatorBuilder: (_, _) => const Divider(
-              color: Colors.amber,
-            ),
+            separatorBuilder: (_, _) => const Divider(),
             itemBuilder: (context, index) {
               final d = caja.getAt(index)!;
               return ListTile(
-                // hoverColor: Colors.black,
                 leading: const Icon(Icons.person, color: Colors.blue),
                 title: Text('${d.nivelEstudio} ${d.nombres} '
                     '${d.apellidos}'),
@@ -111,107 +95,6 @@ class _DirectorioScreenState extends State<DirectorioScreen> {
             },
           );
         },
-      ),
-    );
-  }
-}
-
-class AgregarDocente extends StatefulWidget {
-  const AgregarDocente({super.key});
-
-  @override
-  State<AgregarDocente> createState() => _AgregarDocenteState();
-}
-
-class _AgregarDocenteState extends State<AgregarDocente> {
-
-final TextEditingController _nombreController = TextEditingController();
-final TextEditingController _apellidoController = TextEditingController();
-final TextEditingController _nivelEstudioController = TextEditingController();
-final TextEditingController _carreraController = TextEditingController();
-
-void _agregarDocente() {
-  final String nombre = _nombreController.text.trim();
-  final String apellido = _apellidoController.text.trim();
-  final String nivelEstudios = _nivelEstudioController.text.trim();
-  final String carreraa = _carreraController.text.trim();
-
-  // Validamos que los campos no estén vacíos
-  if (nombre.isNotEmpty && apellido.isNotEmpty) {
-      final nuevoDocente = Docente(nombres: nombre, apellidos: apellido, nivelEstudio: nivelEstudios, carrera: carreraa);
-      Navigator.pop(context, nuevoDocente);
-  }
-}
-
-@override
-  void dispose() {
-    // Liberamos los controladores al destruir el widget
-    _nombreController.dispose();
-    _apellidoController.dispose();
-    _nivelEstudioController.dispose();
-    _carreraController.dispose();
-    super.dispose();
-  }
-
- @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Agregar Docente'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            // Campo Nombre
-            TextField(
-              controller: _nombreController,
-              decoration: InputDecoration(
-                labelText: 'Nombres:',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            SizedBox(height: 10),
-            
-            // Campo Apellido
-            TextField(
-              controller: _apellidoController,
-              decoration: InputDecoration(
-                labelText: 'Apellidos:',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            SizedBox(height: 10),
-
-            // Campo Nivel Estudios
-            TextField(
-              controller: _nivelEstudioController,
-              decoration: InputDecoration(
-                labelText: 'Nivel de Estudios:',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            SizedBox(height: 10),
-
-            // Campo Carrera
-            TextField(
-              controller: _carreraController,
-              decoration: InputDecoration(
-                labelText: 'Carrera:',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            SizedBox(height: 10),
-
-            // Botón para agregar
-            ElevatedButton(
-              onPressed: _agregarDocente,
-              child: Text('Guardar'),
-            ),
-            SizedBox(height: 20),
-            SizedBox(height: 10),
-          ],
-        ),
       ),
     );
   }
