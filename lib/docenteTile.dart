@@ -24,7 +24,7 @@ class _DocenteTileState extends State<DocenteTile> {
 
     return ListTile(
       leading: const Icon(Icons.person, color: Colors.blue),
-      title: Text('${d.nivelEstudio} ${d.nombres} ${d.apellidos}'),
+      title: Text('${d.nivelEstudios} ${d.nombres} ${d.apellidos}'),
       subtitle: Text(d.carrera),
       trailing: IconButton(
         icon: Icon(

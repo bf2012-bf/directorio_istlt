@@ -21,21 +21,21 @@ class _DirectorioScreenState extends State<DirectorioScreen> {
   void _sembrarDatos() {
     if (_caja.isEmpty) {
       _caja.addAll([
-        Docente(nombres: "Israel", apellidos: "Zurita", carrera: "DAW", nivelEstudio: "Ing.",),
-        Docente(nombres: "Angel", apellidos: "Novillo", carrera: "DAW", nivelEstudio: "Msg.",),
-        Docente(nombres: "Cecilia", apellidos: "Naula", carrera: "DAW", nivelEstudio: "Mtr.",),
-        Docente(nombres: "Cristian", apellidos: "Durán", carrera: "DAW", nivelEstudio: "Ing.",),
-        Docente(nombres: "María", apellidos: "Delgado", carrera: "DAW", nivelEstudio: "Ing.",),
-        Docente(nombres: "Pablo", apellidos: "Reyes", carrera: "DAW", nivelEstudio: "Ing.",),
-        Docente(nombres: "Jonh", apellidos: "Melendez", carrera: "DAW", nivelEstudio: "Ing.",),
-        Docente(nombres: "Arturo", apellidos: "Palacios", carrera: "Producción Agrícola", nivelEstudio: "Ing.",),
+        Docente(nombres: "Israel", apellidos: "Zurita", carrera: "DAW", nivelEstudios: "Ing.",),
+        Docente(nombres: "Angel", apellidos: "Novillo", carrera: "DAW", nivelEstudios: "Msg.",),
+        Docente(nombres: "Cecilia", apellidos: "Naula", carrera: "DAW", nivelEstudios: "Mtr.",),
+        Docente(nombres: "Cristian", apellidos: "Durán", carrera: "DAW", nivelEstudios: "Ing.",),
+        Docente(nombres: "María", apellidos: "Delgado", carrera: "DAW", nivelEstudios: "Ing.",),
+        Docente(nombres: "Pablo", apellidos: "Reyes", carrera: "DAW", nivelEstudios: "Ing.",),
+        Docente(nombres: "Jonh", apellidos: "Melendez", carrera: "DAW", nivelEstudios: "Ing.",),
+        Docente(nombres: "Arturo", apellidos: "Palacios", carrera: "Producción Agrícola", nivelEstudios: "Ing.",),
       ]);
     }
   }
  
   void _agregarDocente() { // CREATE
     _caja.add(Docente(nombres: 'Nuevo', apellidos: 'Docente',
-        nivelEstudio: 'Ing.', carrera: 'DAW'));
+        nivelEstudios: 'Ing.', carrera: 'DAW'));
   }
  
   @override
@@ -68,7 +68,7 @@ class _DirectorioScreenState extends State<DirectorioScreen> {
               final d = caja.getAt(index)!;
               return ListTile(
                 leading: const Icon(Icons.person, color: Colors.blue),
-                title: Text('${d.nivelEstudio} ${d.nombres} '
+                title: Text('${d.nivelEstudios} ${d.nombres} '
                     '${d.apellidos}'),
                 subtitle: Text(d.carrera),
                 trailing: Row(
